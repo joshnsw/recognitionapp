@@ -1,0 +1,22 @@
+.detailsPage{
+
+  margin: 100px auto;
+  width:800px;
+  height: 600px;
+  padding: 12px;
+}
+
+
+.successPage{
+
+  margin: 100px auto;
+  width:800px;
+  height: 600px;
+  padding: 100px;
+
+}
+
+
+.cardImg {
+  border-radius: 30%;
+}
