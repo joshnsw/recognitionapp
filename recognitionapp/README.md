@@ -9,10 +9,10 @@ First run the command npm install for installing dependencies, then run the comm
 ## Structure of code
 
 In this project the code is structured into different components, the main components are :
-1. Main page
-2.Modal
-3.Details Page
-4. Success Page
+- Main page
+- Modal
+- Details Page
+- Success Page
 
 
 ### Main Page
