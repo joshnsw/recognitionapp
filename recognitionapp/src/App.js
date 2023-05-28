@@ -269,7 +269,7 @@ const MainPage = () => {
               <img class="cardImg" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
                 <h5 class="card-title">Joe</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Senior analyst</h6>
-                <p class="card-text">Activity this week: 4 actions</p>
+                <p class="card-text">Activity this week: 1 action</p>
                 <Button variant="outline-dark" style={{width: "160px"}} >More details <i class="fa-solid fa-arrow-right"></i></Button>
 
               </div>
@@ -295,7 +295,7 @@ const MainPage = () => {
               <img class="cardImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
                 <h5 class="card-title">Jackie</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Senior analyst</h6>
-                <p class="card-text">Activity this week: 4 actions</p>
+                <p class="card-text">Activity this week: 3 actions</p>
                 <Button variant="outline-dark" style={{width: "160px"}} >More details <i class="fa-solid fa-arrow-right"></i></Button>
 
               </div>
@@ -331,12 +331,12 @@ const DetailsPage = ({handleDetails,selectedRecognition,selectedEmployee}) => {
           ):(
             <>
 
-            <div className="border border-dark detailsPage">
+            <div className=" detailsPage shadow-lg p-3 mb-5 bg-body-secondary rounded">
             <h1>Recognition Details</h1>
 
-            <p className="border border-dark p-2 d-flex h3">Employee to give recognition:{selectedEmployee}</p>
-            <p className="border border-dark p-2 d-flex h3">Type of recognition:{selectedRecognition}</p>
-            <p className="h3 d-flex">Additional Details:</p>
+            <p className="shadow-sm p-3  bg-body-tertiary rounded d-flex h4">Employee to give recognition: {selectedEmployee}</p>
+            <p className="shadow-sm p-3  bg-body-tertiary rounded d-flex h4">Recognition type: {selectedRecognition}</p>
+            <p className="h4 d-flex">Additional Details:</p>
             <div class="form-group mb-3">
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
             </div>
@@ -347,6 +347,7 @@ const DetailsPage = ({handleDetails,selectedRecognition,selectedEmployee}) => {
             </div>
 
             </div>
+
             </>
           )}
 
@@ -366,12 +367,12 @@ const SuccessPage = ({handleSuccess,handleDetails}) => {
 
   return(
     <>
-    <div className="border border-dark successPage">
+    <div className="shadow-lg  bg-body-secondary rounded successPage">
 
     <img src={green} alt="okmark" width="300" height="200"/>
 
     <p className="h3">Success! You gave a recognition!</p>
-    <button onClick={handleReturn} className="btn btn-secondary mt-5 btn-lg">Return to main page</button>
+    <button type="button" class="btn btn-outline-secondary btn-lg m-3" onClick={handleReturn}>Return to main page</button>
     </div>
     </>
 
