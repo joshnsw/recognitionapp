@@ -1,11 +1,65 @@
 
-import './App.css';
+
 import './css/styles.css'
 import green from './assets/greencheckmark.svg';
+
+
+
+import {
+  BrowserRouter as Router,
+  Routes, Route, Link,  useNavigate
+} from 'react-router-dom'
 
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
+
+
+const Login = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email === "josh@ng.com" && password === "123") {
+      navigate(`/main`);
+    } else {
+      alert("Wrong email or password");
+    }
+  }
+
+  return (
+
+    <>
+    <div className="loginBackground d-flex align-items-center">
+    <div className="shadow-lg bg-body-secondary rounded loginPage">
+      <h1>Company X</h1>
+        <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label for="exampleInputEmail1" className="form-label">Email address</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email}
+            onChange={(event) => setEmail(event.target.value)}/>
+          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div className="mb-3">
+          <label for="exampleInputPassword1" className="form-label">Password</label>
+          <input type="password" className="form-control" id="exampleInputPassword1" value={password}
+            onChange={(event) => setPassword(event.target.value)}/>
+        </div>
+
+        <button type="submit" className="btn btn-primary">Login</button>
+      </form>
+
+      </div>
+    </div>
+    </>
+  )
+}
+
 
 
 const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDetails,selectedRecognition,selectedEmployee}) => {
@@ -263,7 +317,7 @@ const MainPage = () => {
       <div className="container p-2"  style={{height: "400px",width:"100%"}}>
         <div className="d-flex justify-content-between mb-2"><h1>Your Team Mates</h1><Button variant="outline-dark" style={{width: "160px"}} >Your Organisation <i class="fa-solid fa-arrow-right"></i></Button></div>
         <div class="row">
-          <div class="col-sm">
+          <div class="col-sm cardComponent">
           <div class="card">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
@@ -276,7 +330,7 @@ const MainPage = () => {
             </div>
           </div>
 
-          <div class="col-sm">
+          <div class="col-sm cardComponent">
           <div class="card">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
@@ -289,7 +343,7 @@ const MainPage = () => {
             </div>
           </div>
 
-          <div class="col-sm">
+          <div class="col-sm cardComponent">
           <div class="card">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
@@ -383,9 +437,20 @@ const SuccessPage = ({handleSuccess,handleDetails}) => {
 
 function App() {
   return (
-    <div className="App">
-      <MainPage/>
-    </div>
+    <>
+
+    <Router>
+
+    <Routes>
+
+    <Route index path="/" element={<Login />} />
+
+    <Route index path="/main" element={<MainPage/>} />
+    </Routes>
+
+
+    </Router>
+    </>
   );
 }
 
