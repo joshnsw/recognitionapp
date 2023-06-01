@@ -1,8 +1,5 @@
-
-
 import './css/styles.css'
 import green from './assets/greencheckmark.svg';
-
 
 
 import {
@@ -318,7 +315,7 @@ export const MainPage = () => {
         <div className="d-flex justify-content-between mb-2"><h1>Your Team Mates</h1><Button variant="outline-dark" style={{width: "160px"}} >Your Organisation <i class="fa-solid fa-arrow-right"></i></Button></div>
         <div class="row">
           <div class="col-sm cardComponent">
-          <div class="card">
+          <div class="card bg-body-tertiary">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
                 <h5 class="card-title">Joe</h5>
@@ -331,7 +328,7 @@ export const MainPage = () => {
           </div>
 
           <div class="col-sm cardComponent">
-          <div class="card">
+          <div class="card bg-body-tertiary">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
                 <h5 class="card-title">Jill</h5>
@@ -344,7 +341,7 @@ export const MainPage = () => {
           </div>
 
           <div class="col-sm cardComponent">
-          <div class="card">
+          <div class="card bg-body-tertiary">
               <div class="card-body">
               <img class="cardImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Card image cap" style={{height: "120px",width:"120px"}}/>
                 <h5 class="card-title">Jackie</h5>
