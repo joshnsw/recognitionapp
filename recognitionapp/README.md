@@ -32,3 +32,10 @@ The details page confirms employee and recognition type selected, and allows use
 ### Success Page
 
 The user successfully submits the form, and a confirmation message is display on this page. To the return to the homepage the user has to click the "return to main page" button.
+
+
+### Testing
+
+Two tests were create to ensure:
+- Login works as expected
+- Modal Component shows up when clicked
