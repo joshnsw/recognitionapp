@@ -3,18 +3,19 @@ import { useState } from 'react';
 import SuccessPage from './SuccessPage';
 
 
-const DetailsPage = ({handleDetails,selectedRecognition,selectedEmployee}) => {
+const DetailsPage = ({handleDetails,selectedRecognition,selectedEmployee,handleReset}) => {
 
   const [success, setSuccess] = useState(false);
 
   const handleSuccess = (event) => {
     setSuccess(!success);
+
   };
 
   return(
     <>
     {success === true ? (
-        <SuccessPage handleDetails={handleDetails} handleSuccess={handleSuccess} />
+        <SuccessPage handleDetails={handleDetails} handleSuccess={handleSuccess} handleReset={handleReset} />
         ):(
           <>
 

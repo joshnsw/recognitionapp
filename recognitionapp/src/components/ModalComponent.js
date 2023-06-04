@@ -6,6 +6,8 @@ import Modal from 'react-bootstrap/Modal';
 const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDetails,selectedRecognition,selectedEmployee}) => {
   const [show, setShow] = useState(false);
 
+  const [validationError, setValidationError] = useState('');
+
   const handleClose = () => {
     setShow(false);
     setStep(1);
@@ -19,11 +21,28 @@ const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDeta
   const handleBack = (event) => {
     if (step > 1) {
       setStep(step - 1);
+      setValidationError('');
     }
   };
 
   const handleNext = (event) => {
+
+    if (step === 1 && !selectedEmployee) {
+      setValidationError('Please select an employee');
+      return;
+    }
+
+    if (step === 2 && !selectedRecognition) {
+      setValidationError('Please select a recognition type');
+      return;
+    }
+
+    if(step === 2) {
+      handleDetails();
+    }
+
       setStep(step + 1);
+      setValidationError('');
   };
 
   return (
@@ -40,6 +59,7 @@ const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDeta
 
         {step === 1 && (
             <div className="pg1">
+              {validationError && <p className="text-danger">{validationError}</p>}
               <p className="h4 text-center">Select employee to give recognition</p>
               <div className="dropdown d-flex justify-content-center">
                 <button
@@ -85,6 +105,7 @@ const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDeta
 
           {step === 2 && (
             <div className="pg2">
+              {validationError && <p className="text-danger">{validationError}</p>}
               <p className="h4 text-center">Select type of recognition to give</p>
               <div className="dropdown d-flex justify-content-center">
                 <button
@@ -142,7 +163,7 @@ const ModalComponent = ({handleEmployeeSelect,handleRecognitionSelect,handleDeta
               <Button variant="secondary" style={{ marginRight: '4px' }} onClick={handleBack}>
                 Back
               </Button>
-              <Button variant="secondary" onClick={handleDetails}>
+              <Button variant="secondary" onClick={handleNext}>
                 Next
               </Button>
             </div>

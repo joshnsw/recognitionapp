@@ -1,11 +1,12 @@
 import green from '../assets/greencheckmark.svg';
 
 
-const SuccessPage = ({handleSuccess,handleDetails}) => {
+const SuccessPage = ({handleSuccess,handleDetails,handleReset}) => {
 
   const handleReturn = (event) => {
     handleSuccess();
     handleDetails();
+    handleReset();
   };
 
   return(

@@ -1,15 +1,10 @@
 import '../css/styles.css'
-import green from '../assets/greencheckmark.svg';
 
-import Login from './Login';
+
 import ModalComponent from './ModalComponent';
 import DetailsPage from './DetailsPage';
 
 
-import {
-  BrowserRouter as Router,
-  Routes, Route,  useNavigate
-} from 'react-router-dom'
 
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -18,6 +13,11 @@ import Button from 'react-bootstrap/Button';
 const MainPage = () => {
 
   const [selectedEmployee, setSelectedEmployee] = useState("");
+
+  const handleReset = (event) => {
+    setSelectedEmployee('');
+    setSelectedRecognition('');
+  };
 
 
   const handleEmployeeSelect = (event) => {
@@ -33,13 +33,16 @@ const MainPage = () => {
   const [details, setDetails] = useState(false);
 
   const handleDetails = (event) => {
+
+
     setDetails(!details);
+
   };
 
     return(
     <>
     {details === true ? (
-          <DetailsPage handleDetails={handleDetails} selectedEmployee={selectedEmployee} selectedRecognition={selectedRecognition}/>
+          <DetailsPage handleDetails={handleDetails} selectedEmployee={selectedEmployee} selectedRecognition={selectedRecognition} handleReset={handleReset}/>
           ) : (
             <div>
             <nav className="navbar bg-body-tertiary shadow-sm">
