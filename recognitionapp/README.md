@@ -9,11 +9,17 @@ First run the command npm install for installing dependencies, then run the comm
 ## Structure of code
 
 In this project the code is structured into different components, the main components are :
+- Login page
 - Main page
 - Modal
 - Details Page
 - Success Page
 
+## Login Page
+
+The login page is where user enters his/her credentials.
+Username:josh@ng.com
+PW:123
 
 ### Main Page
 
